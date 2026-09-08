@@ -4,10 +4,10 @@ import {
   createContext,
   useContext,
   useEffect,
-  useState,
   useCallback,
   type ReactNode,
 } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import type { Language } from "@/types";
 import { translations } from "@/data/translations";
 
@@ -22,41 +22,29 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en");
-  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const language: Language = pathname?.startsWith("/ar") ? "ar" : "en";
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-    const saved = localStorage.getItem("language") as Language | null;
-    if (saved === "ar" || saved === "en") {
-      setLanguage(saved);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
     document.documentElement.lang = language;
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+  }, [language]);
+
+  useEffect(() => {
     localStorage.setItem("language", language);
-  }, [language, mounted]);
+  }, [language]);
 
   const toggleLanguage = useCallback(() => {
-    setLanguage((prev) => (prev === "en" ? "ar" : "en"));
-  }, []);
-
-  const t = translations[language];
-
-  if (!mounted) {
-    return (
-      <LanguageContext.Provider value={{ language: "en", toggleLanguage, t }}>
-        {children}
-      </LanguageContext.Provider>
-    );
-  }
+    localStorage.setItem("language", language === "en" ? "ar" : "en");
+    router.push(language === "en" ? "/ar" : "/");
+  }, [language, router]);
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider
+      value={{ language, toggleLanguage, t: translations[language] }}
+    >
       {children}
     </LanguageContext.Provider>
   );

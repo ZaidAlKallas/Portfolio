@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
   keywords: [
     ".NET Developer",
     "C# Developer",
@@ -34,12 +35,23 @@ export const metadata: Metadata = {
     "Full-Stack Developer",
     "Backend Developer",
     "API Design",
+    "Zaid Al Kallas",
+    "ZaidAlkallas",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
+  alternates: {
+    languages: {
+      "en-US": siteConfig.canonicalUrl,
+      "ar": `${siteConfig.canonicalUrl}/ar`,
+      "x-default": siteConfig.canonicalUrl,
+    },
+    canonical: siteConfig.canonicalUrl,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
+    alternateLocale: "ar_SA",
     url: siteConfig.canonicalUrl,
     title: siteConfig.title,
     description: siteConfig.description,
@@ -68,6 +80,57 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteConfig.canonicalUrl}/#person`,
+      name: siteConfig.name,
+      alternateName: siteConfig.titleAr.split(" — ")[0],
+      jobTitle: "Full-Stack .NET Developer",
+      description: siteConfig.description,
+      email: `mailto:${siteConfig.email}`,
+      url: siteConfig.canonicalUrl,
+      sameAs: [siteConfig.github, siteConfig.linkedin],
+      knowsAbout: [
+        ".NET",
+        "C#",
+        "ASP.NET Core",
+        "Web APIs",
+        "Full-Stack Development",
+      ],
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Full-Stack .NET Developer",
+      },
+      image: `${siteConfig.canonicalUrl}${siteConfig.profileImage}`,
+      knowsLanguage: [
+        { "@type": "Language", name: "English" },
+        { "@type": "Language", name: "Arabic", alternateName: "العربية" },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteConfig.canonicalUrl}/#website`,
+      url: siteConfig.canonicalUrl,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      inLanguage: ["en", "ar"],
+      publisher: { "@id": `${siteConfig.canonicalUrl}/#person` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteConfig.canonicalUrl}/#profile`,
+      url: siteConfig.canonicalUrl,
+      name: siteConfig.name,
+      about: { "@id": `${siteConfig.canonicalUrl}/#person` },
+      inLanguage: "en",
+      isPartOf: { "@id": `${siteConfig.canonicalUrl}/#website` },
+    },
+  ],
+};
+
 interface LayoutProps {
   children: React.ReactNode;
 }
@@ -78,8 +141,12 @@ export default function RootLayout({ children }: LayoutProps) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark");var l=localStorage.getItem("language");if(l==="ar"){document.documentElement.lang="ar";document.documentElement.dir="rtl"}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark");var p=window.location.pathname;if(p==="/ar"||p.startsWith("/ar/")){document.documentElement.lang="ar";document.documentElement.dir="rtl"}else{document.documentElement.lang="en";document.documentElement.dir="ltr"}}catch(e){}})();`,
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body
