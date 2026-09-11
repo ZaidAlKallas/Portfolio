@@ -24,8 +24,15 @@ export default function Education() {
             <AnimatedSection key={index}>
               <div className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 h-full">
                 <div className="mb-4 flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
-                    <img src={entry.universityLogo} alt={`${entry.institution} logo`} className="h-6 w-6 " />
+                  <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-accent/10 text-accent">
+                    <img
+                      src={entry.universityLogo}
+                      alt={`${entry.institution} logo`}
+                      className="h-full w-full object-cover"
+                      width={422}
+                      height={384}
+                      loading="lazy"
+                    />
                   </div>
                   <span
                     className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${

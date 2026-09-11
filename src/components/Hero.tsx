@@ -23,7 +23,7 @@ export default function Hero() {
             </p>
 
             <h1 className="mb-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              {siteConfig.name}
+              {language === "ar" ? siteConfig.nameAr : siteConfig.name}
             </h1>
 
             <p className="mb-6 text-xl font-semibold text-muted-foreground sm:text-xl">

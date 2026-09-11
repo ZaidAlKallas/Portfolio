@@ -82,34 +82,34 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": `${siteConfig.canonicalUrl}/#person`,
-      name: siteConfig.name,
-      alternateName: siteConfig.titleAr.split(" — ")[0],
-      jobTitle: "Full-Stack .NET Developer",
-      description: siteConfig.description,
-      email: `mailto:${siteConfig.email}`,
-      url: siteConfig.canonicalUrl,
-      sameAs: [siteConfig.github, siteConfig.linkedin],
-      knowsAbout: [
-        ".NET",
-        "C#",
-        "ASP.NET Core",
-        "Web APIs",
-        "Full-Stack Development",
-      ],
-      hasOccupation: {
-        "@type": "Occupation",
-        name: "Full-Stack .NET Developer",
-      },
-      image: `${siteConfig.canonicalUrl}${siteConfig.profileImage}`,
-      knowsLanguage: [
-        { "@type": "Language", name: "English" },
-        { "@type": "Language", name: "Arabic", alternateName: "العربية" },
-      ],
+  mainEntity: {
+    "@type": "Person",
+    "@id": `${siteConfig.canonicalUrl}/#person`,
+    name: siteConfig.name,
+    alternateName: siteConfig.titleAr.split(" — ")[0],
+    jobTitle: "Full-Stack .NET Developer",
+    description: siteConfig.description,
+    email: `mailto:${siteConfig.email}`,
+    url: siteConfig.canonicalUrl,
+    sameAs: [siteConfig.github, siteConfig.linkedin],
+    knowsAbout: [
+      ".NET",
+      "C#",
+      "ASP.NET Core",
+      "Web APIs",
+      "Full-Stack Development",
+    ],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Full-Stack .NET Developer",
     },
+    image: `${siteConfig.canonicalUrl}${siteConfig.profileImage}`,
+    knowsLanguage: [
+      { "@type": "Language", name: "English" },
+      { "@type": "Language", name: "Arabic", alternateName: "العربية" },
+    ]
+  },
+  "@graph": [
     {
       "@type": "WebSite",
       "@id": `${siteConfig.canonicalUrl}/#website`,

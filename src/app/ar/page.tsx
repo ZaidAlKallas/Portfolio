@@ -94,6 +94,17 @@ const arJsonLd = {
     url: baseUrl,
     email: `mailto:${siteConfig.email}`,
     sameAs: [siteConfig.github, siteConfig.linkedin],
+    knowsAbout: [
+      ".NET",
+      "C#",
+      "ASP.NET Core",
+      "Web APIs",
+      "تطوير متكامل",
+    ],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "مطور .NET متكامل",
+    },
     knowsLanguage: [
       { "@type": "Language", name: "العربية", alternateName: "Arabic" },
       { "@type": "Language", name: "English" },

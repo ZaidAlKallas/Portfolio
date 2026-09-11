@@ -2,6 +2,7 @@ import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "Zaid Al Kallas",
+  nameAr: "زيد الكلاس",
   title: "Zaid Al Kallas — Full-Stack .NET Developer",
   titleAr: "زيد الكلاس — مطور .NET متكامل",
   description:

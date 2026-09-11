@@ -61,6 +61,7 @@ export interface SocialLink {
 
 export interface SiteConfig {
   name: string;
+  nameAr: string;
   title: string;
   titleAr: string;
   description: string;
