@@ -19,6 +19,7 @@ export const translations: Record<"en" | "ar", Translations> = {
       viewProjects: "View Projects",
       downloadCV: "Download CV",
       contactMe: "Contact Me",
+      processTitle: "Development Process",
     },
     experience: {
       sectionTitle: "Experience",
@@ -97,6 +98,7 @@ export const translations: Record<"en" | "ar", Translations> = {
       viewProjects: "عرض المشاريع",
       downloadCV: "تحميل السيرة الذاتية",
       contactMe: "تواصل معي",
+      processTitle: "عملية التطوير",
     },
     experience: {
       sectionTitle: "الخبرة",

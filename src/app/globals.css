@@ -67,6 +67,33 @@ body {
   font-family: var(--font-arabic), var(--font-sans);
 }
 
+@keyframes glow-march {
+  0% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 6%, transparent);
+  }
+  12% {
+    box-shadow:
+      0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent),
+      0 0 18px 5px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  25%,
+  100% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 6%, transparent);
+  }
+}
+
+.glow-march {
+  animation: glow-march 6s ease-in-out infinite;
+}
+
+.pipeline-line-fill {
+  transform-origin: left;
+}
+
+[dir="rtl"] .pipeline-line-fill {
+  transform-origin: right;
+}
+
 ::selection {
   background-color: var(--accent);
   color: var(--accent-fg);

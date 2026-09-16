@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/language";
 import { siteConfig } from "@/data/site";
 import { ArrowDown, Download, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./icons";
+import ProcessPipeline from "./ProcessPipeline";
 
 export default function Hero() {
   const { language, t } = useLanguage();
@@ -11,13 +12,14 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden"
+      className="relative flex min-h-screen flex-col overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/3" />
+      <div className="absolute inset-0 bg-linear-to-br from-accent/5 via-transparent to-accent/3" />
 
-      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 pt-20">
-        <div className="flex flex-col-reverse items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
-          <div className="flex-1 text-center lg:text-start">
+      <div className="relative flex flex-1 items-center">
+        <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 pt-20 pb-10">
+          <div className="flex flex-col-reverse items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+            <div className="flex-1 text-center lg:text-start">
             <p className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">
               {t.hero.greeting}
             </p>
@@ -94,7 +96,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <div className="relative">
               <div className="h-48 w-48 overflow-hidden rounded-full border-2 border-border bg-accent/10 sm:h-56 sm:w-56 lg:h-64 lg:w-64">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -123,8 +125,10 @@ export default function Hero() {
               <div className="absolute -bottom-3 -right-3 h-24 w-24 rounded-full border border-accent/20 bg-accent/5 blur-sm sm:-bottom-4 sm:-right-4 sm:h-32 sm:w-32" />
             </div>
           </div>
+          </div>
         </div>
       </div>
+      <ProcessPipeline />
     </section>
   );
 }

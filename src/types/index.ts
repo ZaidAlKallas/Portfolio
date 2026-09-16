@@ -66,6 +66,8 @@ export interface SiteConfig {
   titleAr: string;
   description: string;
   descriptionAr: string;
+  bio: string;
+  bioAr: string;
   email: string;
   github: string;
   linkedin: string;
@@ -91,6 +93,7 @@ export interface Translations {
     viewProjects: string;
     downloadCV: string;
     contactMe: string;
+    processTitle: string;
   };
   experience: {
     sectionTitle: string;

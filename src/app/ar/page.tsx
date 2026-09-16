@@ -90,7 +90,7 @@ const arJsonLd = {
     name: "زيد الكلاس",
     alternateName: siteConfig.name,
     jobTitle: "مطور .NET متكامل",
-    description: siteConfig.descriptionAr,
+    description: siteConfig.bioAr,
     url: baseUrl,
     email: `mailto:${siteConfig.email}`,
     sameAs: [siteConfig.github, siteConfig.linkedin],
@@ -114,7 +114,7 @@ const arJsonLd = {
 
 export default function ArabicHome() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-accent/5 via-transparent to-accent/3">
+    <div className="min-h-screen bg-linear-to-br from-accent/5 via-transparent to-accent/3">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(arJsonLd) }}
