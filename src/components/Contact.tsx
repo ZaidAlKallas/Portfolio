@@ -46,7 +46,7 @@ export default function Contact() {
                 href={`mailto:${siteConfig.email}`}
                 className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-all hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent-fill group-hover:text-accent-foreground">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
@@ -65,7 +65,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-all hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent-fill group-hover:text-accent-foreground">
                   <GithubIcon className="h-5 w-5" />
                 </div>
                 <div>
@@ -85,7 +85,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-all hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5"
                 >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent-fill group-hover:text-accent-foreground">
                   <LinkedinIcon className="h-5 w-5" />
                 </div>
                   <div>
@@ -124,7 +124,7 @@ export default function Contact() {
                       setFormState({ ...formState, name: e.target.value })
                     }
                     placeholder={t.contact.namePlaceholder}
-                    className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                    className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                   />
                 </div>
                 <div>
@@ -144,7 +144,7 @@ export default function Contact() {
                       setFormState({ ...formState, email: e.target.value })
                     }
                     placeholder={t.contact.emailPlaceholder}
-                    className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                    className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                   />
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                     setFormState({ ...formState, subject: e.target.value })
                   }
                   placeholder={t.contact.subjectPlaceholder}
-                  className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                  className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 />
               </div>
 
@@ -187,13 +187,13 @@ export default function Contact() {
                     setFormState({ ...formState, message: e.target.value })
                   }
                   placeholder={t.contact.messagePlaceholder}
-                  className="w-full resize-none rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                  className="w-full resize-none rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/25 sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent-fill px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent-fill/90 hover:shadow-lg hover:shadow-accent/25 sm:w-auto"
               >
                 <Send className="h-4 w-4" />
                 {t.contact.sendButton}

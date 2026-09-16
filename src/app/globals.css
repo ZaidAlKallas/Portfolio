@@ -8,6 +8,7 @@
   --color-card: var(--card);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-fill: var(--accent-fill);
   --color-accent-foreground: var(--accent-fg);
   --color-muted-foreground: var(--muted-fg);
   --font-sans: "Inter", "IBM Plex Sans", system-ui, sans-serif;
@@ -20,8 +21,9 @@
   --card: #ffffff;
   --border: #e5e5e5;
   --accent: #5b21b6;
+  --accent-fill: #4c1d95;
   --accent-fg: #ffffff;
-  --muted-fg: #737373;
+  --muted-fg: #525252;
 }
 
 .dark {
@@ -30,6 +32,7 @@
   --card: #111118;
   --border: #1e1e2e;
   --accent: #8b5cf6;
+  --accent-fill: #6d28d9;
   --accent-fg: #ffffff;
   --muted-fg: #8888a0;
 }

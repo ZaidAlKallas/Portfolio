@@ -15,12 +15,12 @@ import {
 type Step = { icon: LucideIcon; en: string; ar: string };
 
 const steps: Step[] = [
-  { icon: Lightbulb, en: "Idea", ar: "الفكرة" },
-  { icon: Palette, en: "Design", ar: "التصميم" },
-  { icon: BarChart3, en: "Analytics", ar: "التحليل" },
-  { icon: Code2, en: "Implementation", ar: "التنفيذ" },
-  { icon: Bug, en: "Testing", ar: "الاختبار" },
-  { icon: Rocket, en: "Deployment", ar: "النشر" },
+  { icon: Lightbulb, en: "Idea", ar: "فكرة" },
+  { icon: Palette, en: "Design", ar: "تصميم" },
+  { icon: BarChart3, en: "Analytics", ar: "تحليل" },
+  { icon: Code2, en: "Implementation", ar: "تنفيذ" },
+  { icon: Bug, en: "Testing", ar: "اختبار" },
+  { icon: Rocket, en: "Deployment", ar: "نشر" },
 ];
 
 type Segment = {
@@ -109,10 +109,18 @@ function ZGrid({
     h: number;
     segs: (Segment | null)[];
   } | null>(null);
+  const [state, setState] = useState<"idle" | "settled" | "draw">("idle");
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (!visible) {
+      setGeo(null);
+      setState("idle");
+      return;
+    }
+
+    let alive = true;
 
     const measure = () => {
       const base = el.getBoundingClientRect();
@@ -121,7 +129,9 @@ function ZGrid({
       if (w === 0 || h === 0) return;
 
       const center = (idx: number) => {
-        const node = el.querySelector(`[data-node="${idx}"]`);
+        const node = el.querySelector(
+          `[data-node="${idx}"] .glow-march`,
+        );
         if (!node) return null;
         const r = node.getBoundingClientRect();
         return {
@@ -145,18 +155,30 @@ function ZGrid({
       setGeo({ w, h, segs });
     };
 
-    measure();
-
-    // Re-measure once the entrance animation (0.5s + stagger) settles.
-    const settle = window.setTimeout(measure, visible ? 1400 : 0);
+    // Wait until the entrance animation (0.5s + stagger) settles so the
+    // SVG is drawn once, at the final node positions, with no visible jump.
+    const settle = window.setTimeout(() => {
+      if (!alive) return;
+      measure();
+      setState("settled");
+      window.setTimeout(() => {
+        if (alive) setState("draw");
+      }, 60);
+    }, 1200);
 
     const ro = new ResizeObserver(measure);
     ro.observe(el);
     return () => {
+      alive = false;
       window.clearTimeout(settle);
       ro.disconnect();
     };
   }, [visible]);
+
+  const showSvg =
+    geo !== null &&
+    geo.segs.length === flow.length &&
+    state !== "idle";
 
   return (
     <div
@@ -167,7 +189,7 @@ function ZGrid({
         minHeight,
       }}
     >
-      {geo && geo.segs.length === flow.length && (
+      {showSvg && (
         <svg
           className="pointer-events-none absolute inset-0 z-0 h-full w-full"
           viewBox={`0 0 ${geo.w} ${geo.h}`}
@@ -192,7 +214,7 @@ function ZGrid({
                 strokeLinecap="round"
                 pathLength={100}
                 strokeDasharray={100}
-                strokeDashoffset={visible ? 0 : 100}
+                strokeDashoffset={state === "draw" ? 0 : 100}
                 style={{
                   transition: `stroke-dashoffset 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${
                     600 + i * 130

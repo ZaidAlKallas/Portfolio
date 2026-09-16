@@ -46,7 +46,7 @@ export default function Projects() {
                 onClick={() => setActiveCategory(cat)}
                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
                   activeCategory === cat
-                    ? "bg-accent text-accent-foreground"
+                    ? "bg-accent-fill text-accent-foreground"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
               >

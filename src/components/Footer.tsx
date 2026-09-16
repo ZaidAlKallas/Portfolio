@@ -9,7 +9,7 @@ export default function Footer() {
   const { language, t } = useLanguage();
 
   return (
-    <footer className="border-t border-border bg-card/50">
+    <footer className="border-t border-border bg-card">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
           <div className="text-center sm:text-start">
@@ -61,7 +61,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {siteConfig.name}.{" "}
             {t.footer.copyright}
           </p>
-          <p className="mt-1 text-xs text-muted-foreground/60">
+          <p className="mt-1 text-xs text-muted-foreground">
             {t.footer.builtWith}
           </p>
         </div>

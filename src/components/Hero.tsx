@@ -45,7 +45,7 @@ export default function Hero() {
                     .getElementById("projects")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/25"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent-fill px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent-fill/90 hover:shadow-lg hover:shadow-accent/25"
               >
                 {t.hero.viewProjects}
                 <ArrowDown className="h-4 w-4" />
@@ -116,7 +116,7 @@ export default function Hero() {
                       const fallback = document.createElement("div");
                       fallback.className =
                         "fallback-icon flex h-full w-full items-center justify-center";
-                      fallback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/40"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>`;
+                      fallback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>`;
                       parent.appendChild(fallback);
                     }
                   }}
