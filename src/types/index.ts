@@ -42,7 +42,8 @@ export interface EducationEntry {
   datesAr: string;
   status: "completed" | "ongoing";
   statusAr: string;
-  score?: number;
+  score: string;
+  scoreAr: string;
   universityLogo: string;
 }
 

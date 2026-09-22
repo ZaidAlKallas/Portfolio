@@ -9,7 +9,7 @@ export default function Education() {
   const { language, t } = useLanguage();
 
   return (
-    <section id="education" className="py-24 bg-accent/[0.02]">
+    <section id="education" className="py-24 bg-accent/2">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AnimatedSection>
           <div className="mb-12">
@@ -60,6 +60,10 @@ export default function Education() {
                 <p className="mb-3 text-sm text-muted-foreground">
                   {language === "ar" ? entry.institutionAr : entry.institution}
                 </p>
+
+                <h4 className="mb-1 text-sm font-medium text-foreground">
+                  {language === "ar" ? entry.scoreAr : entry.score}
+                </h4>
 
                 <p className="text-sm font-medium text-muted-foreground">
                   {language === "ar" ? entry.datesAr : entry.dates}

@@ -13,6 +13,8 @@ export const education: EducationEntry[] = [
     status: "ongoing",
     statusAr: "مستمر",
     universityLogo: "/images/damascus-university-logo.jpg",
+    score: "Third Year",
+    scoreAr: "السنة الثالثة",
   },
   {
     degree: "Diploma",
@@ -26,6 +28,7 @@ export const education: EducationEntry[] = [
     status: "completed",
     statusAr: "مكتمل",
     universityLogo: "/images/damascus-university-logo.jpg",
-    score: 85.4,
+    score: "Excellent - Graduated second in Class",
+    scoreAr: "امتياز - تخرجت الثاني على الدفعة",
   },
 ];
