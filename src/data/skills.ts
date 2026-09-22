@@ -2,22 +2,26 @@ import { SkillCategory } from "@/types";
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Programming",
-    titleAr: "البرمجة",
-    skills: ["C#", "JavaScript", "SQL", "PL/SQL"],
-  },
-  {
     title: ".NET / Backend",
     titleAr: ".NET / الخلفية",
     skills: [
       ".NET 10",
       "ASP.NET Core",
+      "Entity Framework Core",
       "Minimal APIs",
+      "REST APIs",
       "ASP.NET Core MVC",
       "Blazor",
-      "Entity Framework Core",
+      "Dependency Injection",
+      "Middleware",
+      "OpenAPI",
       "ADO.NET",
     ],
+  },
+  {
+    title: "Programming",
+    titleAr: "البرمجة",
+    skills: ["C#", "LINQ", "SQL", "JavaScript", "PL/SQL"],
   },
   {
     title: "Databases",
@@ -29,15 +33,35 @@ export const skillCategories: SkillCategory[] = [
     titleAr: "الهندسة والعمارة",
     skills: [
       "Vertical Slice Architecture",
-      "REST APIs",
+      "Clean Architecture",
+      "CQRS",
+      "SOLID",
+      "FluentValidation",
+      "Database Migrations",
+    ],
+  },
+  {
+    title: "Security & Authentication",
+    titleAr: "الأمان والمصادقة",
+    skills: [
       "Authentication & Authorization",
       "JWT",
       "Refresh Tokens",
-      "OAuth",
-      "FluentValidation",
-      "Integration Testing",
-      "Health Checks",
+      "OAuth 2.0",
       "Rate Limiting",
+      "Email Verification",
+      "Password Reset",
+    ],
+  },
+  {
+    title: "Testing & Quality Assurance",
+    titleAr: "الاختبار وضمان الجودة",
+    skills: [
+      "Unit Testing",
+      "Integration Testing",
+      "API Testing",
+      "Testcontainers",
+      "Test Coverage",
     ],
   },
   {
@@ -46,16 +70,31 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "Docker",
       "GitHub Actions",
-      "Git",
-      "GitHub",
+      "CI/CD",
       "Redis",
-      "Serilog",
       "Hangfire",
+    ],
+  },
+  {
+    title: "Observability",
+    titleAr: "المراقبة والتشخيص",
+    skills: [
+      "Serilog",
+      "OpenTelemetry",
+      "Health Checks",
+      "Distributed Tracing",
     ],
   },
   {
     title: "Application Development",
     titleAr: "تطوير التطبيقات",
-    skills: [".NET MAUI", "MVVM", "Bootstrap"],
+    skills: [
+      ".NET MAUI",
+      "MVVM",
+      "Blazor Hybrid",
+      "Bootstrap",
+      "Responsive UI",
+      "Localization",
+    ],
   },
 ];
