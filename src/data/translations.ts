@@ -12,10 +12,10 @@ export const translations: Record<"en" | "ar", Translations> = {
     },
     hero: {
       greeting: "Hello, I'm",
-      title: "Full-Stack .NET Developer",
-      subtitle: "Software Engineer & .NET Developer",
+      title: ".NET Backend Developer",
+      subtitle: "Software Engineer & .NET Backend Developer",
       description:
-        "Building maintainable web APIs and applications using C# and modern .NET technologies. Focused on backend development, API design, security, and building real-world products.",
+        "Building secure, scalable Web APIs and backend systems using C# and modern .NET technologies. Focused on backend architecture, API design, data access, and building real-world products.",
       viewProjects: "View Projects",
       downloadCV: "Download CV",
       contactMe: "Contact Me",
@@ -91,10 +91,10 @@ export const translations: Record<"en" | "ar", Translations> = {
     },
     hero: {
       greeting: "مرحباً، أنا",
-      title: "مطور .NET متكامل",
-      subtitle: "مهندس برمجيات ومطور .NET",
+      title: "مطور Backend باستخدام .NET",
+      subtitle: "مهندس برمجيات ومطور Backend .NET",
       description:
-        "أبني واجهات برمجة تطبيقات وتطبيقات ويب قابلة للصيانة باستخدام C# وتقنيات .NET الحديثة. أركّز على تطوير الواجهات الخلفية وتصميم واجهات البرمجة والأمان وبناء منتجات واقعية.",
+        "أبني واجهات برمجية وأنظمة Backend آمنة وقابلة للتوسع باستخدام C# وتقنيات .NET الحديثة. أركز على هندسة الأنظمة، وتصميم واجهات البرمجة، والوصول إلى البيانات، وبناء منتجات تعالج احتياجات حقيقية.",
       viewProjects: "عرض المشاريع",
       downloadCV: "تحميل السيرة الذاتية",
       contactMe: "تواصل معي",

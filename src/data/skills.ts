@@ -7,26 +7,20 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       ".NET 10",
       "ASP.NET Core",
-      "Entity Framework Core",
       "Minimal APIs",
+      "ASP.NET Core Web API",
       "REST APIs",
+      "Entity Framework Core",
       "ASP.NET Core MVC",
-      "Blazor",
       "Dependency Injection",
       "Middleware",
       "OpenAPI",
-      "ADO.NET",
     ],
   },
   {
     title: "Programming",
     titleAr: "البرمجة",
     skills: ["C#", "LINQ", "SQL", "JavaScript", "PL/SQL"],
-  },
-  {
-    title: "Databases",
-    titleAr: "قواعد البيانات",
-    skills: ["PostgreSQL", "SQL Server", "Oracle", "SQLite"],
   },
   {
     title: "Architecture & Engineering",
@@ -39,6 +33,11 @@ export const skillCategories: SkillCategory[] = [
       "FluentValidation",
       "Database Migrations",
     ],
+  },
+  {
+    title: "Databases",
+    titleAr: "قواعد البيانات",
+    skills: ["PostgreSQL", "SQL Server", "Oracle", "SQLite"],
   },
   {
     title: "Security & Authentication",
@@ -86,12 +85,13 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Application Development",
-    titleAr: "تطوير التطبيقات",
+    title: "Frontend & Application Development",
+    titleAr: "تطوير الواجهات والتطبيقات",
     skills: [
+      "Blazor",
+      "Blazor Hybrid",
       ".NET MAUI",
       "MVVM",
-      "Blazor Hybrid",
       "Bootstrap",
       "Responsive UI",
       "Localization",
