@@ -8,6 +8,6 @@
     </linearGradient>
   </defs>
   <text x="680" y="300" font-family="'Segoe UI', Arial, sans-serif" font-size="72" font-weight="700" fill="#f0f0f0">Zaid Al Kallas</text>
-  <text x="682" y="380" font-family="'Segoe UI', Arial, sans-serif" font-size="40" font-weight="400" fill="#8b5cf6">Full-Stack .NET Developer</text>
+  <text x="682" y="380" font-family="'Segoe UI', Arial, sans-serif" font-size="40" font-weight="400" fill="#8b5cf6">.NET Backend Developer</text>
   <text x="682" y="460" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="400" fill="#8888a0">C# · ASP.NET Core · PostgreSQL · Docker</text>
 </svg>
