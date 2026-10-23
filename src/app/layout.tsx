@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     "API Design",
     "Zaid Al Kallas",
     "ZaidAlkallas",
+    "Software Engineer",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,

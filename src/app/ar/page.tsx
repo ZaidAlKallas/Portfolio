@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     "تصميم واجهات برمجة التطبيقات",
     "زيد الكلاس",
     "مطور سوري",
+    "مهندس برمجيات",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
